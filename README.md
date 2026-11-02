@@ -84,15 +84,28 @@ git push -u origin main
 
 ---
 
-### Langkah 4: Mengaktifkan GitHub Pages Otomatis (GitHub Actions)
-Repository ini sudah dilengkapi file workflow otomatis di `.github/workflows/deploy.yml`.
+### Langkah 4: Publikasi ke Vercel (Sangat Cepat & Otomatis)
+Proyek ini sudah dilengkapi file konfigurasi `vercel.json` dan `.npmrc`:
+
+1. Buka [Vercel](https://vercel.com/) dan masuk menggunakan akun GitHub Anda.
+2. Klik tombol **Add New...** > **Project**.
+3. Pilih repository GitHub Anda, lalu klik **Import**.
+4. Pengaturan build akan otomatis terdeteksi:
+   - **Framework Preset**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+5. Klik **Deploy**! Website Anda akan aktif dalam beberapa detik.
+
+---
+
+### Alternatif: Mengaktifkan GitHub Pages (GitHub Actions)
+Repository ini juga dilengkapi file workflow otomatis di `.github/workflows/deploy.yml`.
 
 1. Di halaman repository GitHub Anda, buka tab **Settings**.
 2. Di menu sebelah kiri, klik **Pages**.
 3. Pada bagian **Build and deployment** > **Source**, ganti pilihan dari *Deploy from a branch* menjadi:
    👉 **GitHub Actions**
-4. Selesai! GitHub Actions akan otomatis melakukan build dan menerbitkan website portofolio Anda.
-5. Dalam 1–2 menit, link website aktif Anda akan muncul di halaman tersebut (misalnya: `https://username-anda.github.io/nama-repo/`).
+4. Selesai! Link website aktif Anda akan muncul di halaman tersebut (misalnya: `https://username-anda.github.io/nama-repo/`).
 
 ---
 
