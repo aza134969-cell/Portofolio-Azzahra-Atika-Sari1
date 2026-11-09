@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { ArrowRight, Smartphone, Globe, LayoutDashboard, Sparkles, Star, Camera, RotateCcw } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Smartphone, Globe, LayoutDashboard, Sparkles, Star } from 'lucide-react';
 import { PERSONAL_INFO, STATS, COLLABORATORS } from '../data/portfolioData';
 import { Collaborator } from '../types';
 
@@ -14,46 +14,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onSelectCategory,
   onOpenContact,
 }) => {
-  const [customPhoto, setCustomPhoto] = useState<string | null>(() => {
-    try {
-      return localStorage.getItem('portfolio_user_custom_photo');
-    } catch {
-      return null;
-    }
-  });
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const result = event.target?.result as string;
-        setCustomPhoto(result);
-        try {
-          localStorage.setItem('portfolio_user_custom_photo', result);
-        } catch (err) {
-          console.warn('Gagal menyimpan ke localStorage:', err);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleResetPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCustomPhoto(null);
-    try {
-      localStorage.removeItem('portfolio_user_custom_photo');
-    } catch (err) {
-      console.warn('Gagal menghapus dari localStorage:', err);
-    }
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-    }
-  };
-
-  const currentPhoto = customPhoto || PERSONAL_INFO.heroImage;
   return (
     <section id="home" className="pt-6 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Main Hero Container Card (Matching the rounded card in the reference image) */}
@@ -211,60 +171,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </svg>
             </div>
 
-            {/* Central Designer Portrait with custom photo support */}
-            <div className="relative z-10 max-w-[290px] sm:max-w-[340px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/90 group">
-              {/* Hidden file input for uploading the user's exact original photo */}
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleImageUpload}
-              />
-
-              {/* Upload badge floating top-right */}
-              <div className="absolute top-3 right-3 z-30 flex items-center gap-1.5">
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="px-2.5 py-1 text-[11px] font-bold bg-white/95 hover:bg-white text-slate-800 rounded-full shadow-md backdrop-blur-md flex items-center gap-1.5 border border-slate-200 transition-all cursor-pointer hover:scale-105 active:scale-95"
-                  title="Ganti dengan file asli Foto KTM Anda tanpa perubahan wajah"
-                >
-                  <Camera className="w-3.5 h-3.5 text-amber-600" />
-                  <span>{customPhoto ? 'Ganti File Asli' : 'Unggah Foto Asli (KTM)'}</span>
-                </button>
-                {customPhoto && (
-                  <button
-                    type="button"
-                    onClick={handleResetPhoto}
-                    className="p-1 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white shadow-md transition-all cursor-pointer"
-                    title="Kembalikan ke foto bawaan"
-                  >
-                    <RotateCcw className="w-3 h-3" />
-                  </button>
-                )}
-              </div>
-
+            {/* Central Designer Portrait */}
+            <div className="relative z-10 max-w-[290px] sm:max-w-[340px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/90">
               <img
-                src={currentPhoto}
+                src={PERSONAL_INFO.heroImage}
                 alt={PERSONAL_INFO.name}
                 referrerPolicy="no-referrer"
                 className="w-full h-auto object-cover object-top hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent p-4 text-white">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-xs font-semibold tracking-wide text-amber-300">
-                      {PERSONAL_INFO.name}
-                    </div>
-                    <div className="text-[11px] text-slate-200">{PERSONAL_INFO.university}</div>
-                  </div>
-                  {customPhoto && (
-                    <span className="text-[10px] bg-emerald-500/80 text-white font-bold px-2 py-0.5 rounded-full">
-                      Foto Asli 100%
-                    </span>
-                  )}
+                <div className="text-xs font-semibold tracking-wide text-amber-300">
+                  {PERSONAL_INFO.name}
                 </div>
+                <div className="text-[11px] text-slate-200">{PERSONAL_INFO.university}</div>
               </div>
             </div>
 

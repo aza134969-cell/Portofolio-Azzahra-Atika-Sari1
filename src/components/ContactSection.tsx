@@ -115,26 +115,29 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Social links */}
-            <div className="pt-2">
-              <span className="text-xs text-slate-400 block mb-2 font-medium">
+            <div className="pt-2 space-y-2">
+              <span className="text-xs text-slate-400 block font-medium">
                 Tautan Profil & Repositori:
               </span>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2.5">
                 <a
                   href={PERSONAL_INFO.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
-                  aria-label="GitHub"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700/80 transition-all text-xs font-semibold group cursor-pointer"
+                  title="Kunjungi GitHub @azzahraatika"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
+                  <span>github.com/azzahraatika</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-400 transition-colors" />
                 </a>
                 <a
                   href={PERSONAL_INFO.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors border border-slate-700/80"
                   aria-label="LinkedIn"
+                  title="LinkedIn Profil"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
@@ -142,8 +145,9 @@ export const ContactSection: React.FC = () => {
                   href={PERSONAL_INFO.figma}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors border border-slate-700/80"
                   aria-label="Figma Community"
+                  title="Figma Profil"
                 >
                   <Figma className="w-4 h-4" />
                 </a>

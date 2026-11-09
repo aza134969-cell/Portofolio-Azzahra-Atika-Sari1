@@ -33,8 +33,8 @@ Pastikan Anda telah menginstal [Node.js](https://nodejs.org/) (versi 18 atau leb
 
 1. **Clone repository ini** (atau unduh zip dan ekstrak):
    ```bash
-   git clone https://github.com/USERNAME-ANDA/NAMA-REPO-ANDA.git
-   cd NAMA-REPO-ANDA
+   git clone https://github.com/azzahraatika/portofolio.git
+   cd portofolio
    ```
 
 2. **Instal dependensi**:
@@ -56,7 +56,7 @@ Pastikan Anda telah menginstal [Node.js](https://nodejs.org/) (versi 18 atau leb
 
 ---
 
-## 🌐 Cara Publikasi ke GitHub & GitHub Pages
+## 🌐 Cara Publikasi ke GitHub & Vercel
 
 ### Langkah 1: Inisialisasi Git di Komputer Anda
 Buka terminal di dalam folder proyek ini, lalu jalankan:
@@ -69,16 +69,16 @@ git branch -M main
 ```
 
 ### Langkah 2: Buat Repository Baru di GitHub
-1. Masuk ke akun [GitHub](https://github.com/).
+1. Masuk ke akun GitHub Anda: [github.com/azzahraatika](https://github.com/azzahraatika).
 2. Klik tombol **New** (Buat Repository Baru).
-3. Beri nama repository, misalnya: `portofolio` atau `portofolio-uiux`.
+3. Beri nama repository, misalnya: `portofolio` (atau `portofolio-uiux`).
 4. Pilih **Public**, lalu klik **Create repository** (jangan centang Add README karena sudah ada).
 
 ### Langkah 3: Hubungkan dan Push ke GitHub
-Salin URL repository Anda dari GitHub, lalu jalankan di terminal:
+Hubungkan ke akun GitHub Anda dan push:
 
 ```bash
-git remote add origin https://github.com/USERNAME-ANDA/NAMA-REPO-ANDA.git
+git remote add origin https://github.com/azzahraatika/portofolio.git
 git push -u origin main
 ```
 

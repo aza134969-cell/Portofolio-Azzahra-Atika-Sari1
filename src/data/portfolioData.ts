@@ -1,6 +1,6 @@
 import { Project, Service, SkillCategory, Collaborator } from '../types';
 
-import heroPortrait from '../assets/images/atika_exact_ktm_portrait_1792390330179.jpg';
+import heroPortrait from '../assets/images/foto_ktm.jpg';
 import projectMobileFintrack from '../assets/images/project_mobile_fintrack_1792388853833.jpg';
 import projectDashboardAcademic from '../assets/images/project_dashboard_academic_1792388854555.jpg';
 import projectEcomarket from '../assets/images/project_ecomarket_1792388854385.jpg';
@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   bio: 'Saya adalah mahasiswa Sistem Informasi yang memiliki ketertarikan mendalam pada UI/UX Design dan Front-End Web Development. Berbekal pemahaman analisis sistem, arsitektur informasi, serta riset pengguna, saya merancang antarmuka yang estetis sekaligus mengimplementasikannya ke dalam kode React & Tailwind CSS yang responsif, cepat, dan aksesibel.',
   heroImage: heroPortrait,
   email: 'azzahra.atika168@smk.belajar.id',
-  github: 'https://github.com',
+  github: 'https://github.com/azzahraatika',
   linkedin: 'https://linkedin.com',
   dribbble: 'https://dribbble.com',
   figma: 'https://figma.com',
@@ -103,7 +103,7 @@ export const PROJECTS: Project[] = [
     ],
     image: projectDashboardAcademic,
     liveUrl: '#',
-    githubUrl: 'https://github.com',
+    githubUrl: 'https://github.com/azzahraatika',
     figmaUrl: 'https://figma.com',
     featured: true,
   },
@@ -146,7 +146,7 @@ export const PROJECTS: Project[] = [
     ],
     image: projectEcomarket,
     liveUrl: '#',
-    githubUrl: 'https://github.com',
+    githubUrl: 'https://github.com/azzahraatika',
     featured: true,
   },
   {
@@ -166,7 +166,7 @@ export const PROJECTS: Project[] = [
     ],
     image: projectDashboardAcademic,
     liveUrl: '#',
-    githubUrl: 'https://github.com',
+    githubUrl: 'https://github.com/azzahraatika',
     featured: false,
   },
 ];
